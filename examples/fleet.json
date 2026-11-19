@@ -1,0 +1,31 @@
+{
+  "organization": "Acme",
+  "vms": [
+    {
+      "name": "ci-runner",
+      "from": "catalog:debian-13",
+      "cpus": 4,
+      "memoryMiB": 8192,
+      "diskGiB": 64,
+      "labels": { "team": "platform", "purpose": "ci" },
+      "state": "running",
+      "provision": [
+        "apt-get update -qq && DEBIAN_FRONTEND=noninteractive apt-get install -y -qq build-essential git",
+        "useradd -m runner || true"
+      ]
+    },
+    {
+      "name": "dev-alice",
+      "from": "https://images.acme.example/dev-base-2.1.avmimg",
+      "labels": { "owner": "alice" },
+      "state": "stopped"
+    },
+    {
+      "name": "malware-lab",
+      "from": "catalog:debian-13",
+      "isolated": true,
+      "disposable": true,
+      "switchName": "lab"
+    }
+  ]
+}
