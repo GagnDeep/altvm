@@ -1,0 +1,12 @@
+[Unit]
+Description=AltVM guest agent (vsock)
+After=local-fs.target
+
+[Service]
+ExecStartPre=-/sbin/modprobe vmw_vsock_virtio_transport
+ExecStart=/usr/bin/python3 /usr/local/bin/altvm-agent
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
