@@ -1,0 +1,21 @@
+title: AltVM
+description: Free, open-source Parallels Desktop alternative for Apple silicon Macs. Run Linux and macOS virtual machines on M1–M5, with snapshots, a full CLI, REST API and an MCP server for AI agents.
+url: https://gagndeep.github.io
+baseurl: /altvm
+lang: en
+theme: jekyll-theme-cayman
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: false
+github:
+  repository_url: https://github.com/GagnDeep/altvm
+show_downloads: false
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /images/altvm-app-vm-settings.png
