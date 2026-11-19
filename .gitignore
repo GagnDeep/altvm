@@ -1,0 +1,9 @@
+.build/
+dist/
+*.key
+*.escrow.key
+.DS_Store
+.swiftpm/
+_site/
+.jekyll-cache/
+*.vzvmsave
